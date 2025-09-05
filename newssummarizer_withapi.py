@@ -5,7 +5,8 @@ import os
 from transformers import pipeline
 
 # ✅ Read NewsAPI key from environment variable
-NEWS_API_KEY = os.getenv("NEWS_API_KEY")
+API_KEY = "9c048578b34647e6aa91fb609d76649d"
+
 
 # Initialize FastAPI
 app = FastAPI(title="News Summarizer API")
@@ -63,5 +64,6 @@ def get_news(category: str):
                 "summary": summary,
                 "url": article["url"]
             })
+
 
     return {"category": category, "summaries": summaries}
